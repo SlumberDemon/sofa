@@ -54,12 +54,12 @@ elif [ "$1" == "wall" ]; then
 # Random Utils
 elif [ "$1" == "utils" ]; then
 
-    if [ "$2" == "-r" ]; then # Rice
+    if [ "$2" == "-r" ]; then
         yay -S cbonsai cmatrix neofetch hyfetch pipes.sh cava uwufetch
-    elif [ "$2" == "-i" ]; then # Install
+    elif [ "$2" == "-i" ]; then
         yay -S python-material-color-utilities swww ttf-tabler-icons python-pywal wlogout gtklock gtklock-playerctl-module gtklock-powerbar-module gtklock-userinfo-module nerd-fonts-inter eww-try-wayland-git gradience fish playerctl starship nautilus gnome-clocks-git gnome-calendar-git gnome-calculator-gtk3 baobab-gtk3 eog-git gnome-font-viewer-git gnome-text-editor-git git
-    elif [ "$2" == "-n" ]; then # Needed
-        yay -S python-material-color-utilities
+    elif [ "$2" == "-n" ]; then
+        yay -S python-material-color-utilities grep sed
     fi
 ###
 
