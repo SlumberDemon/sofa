@@ -8,7 +8,7 @@ Soft Organic Furniture Arrangement
 
 </div>
 
-## Setup
+## Install
 
 ```
 git clone https://github.com/SlumberDemon/sofa.git
@@ -16,7 +16,7 @@ git clone https://github.com/SlumberDemon/sofa.git
 sudo cp sofa/sofa /usr/local/bin && sudo cp sofa/sofa.py /usr/local/bin
 ```
 
-## Install
+## Setup
 
 ```
 sofa install
