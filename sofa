@@ -34,7 +34,7 @@ elif [ "$1" == "install" ]; then
 
 elif [ "$1" == "wall" ]; then
 
-    wall_path=$(jq -r '.wallpath' config.json)
+    wall_path=$(grep -o '"wallpath": *"[^"]*"' ~/.sofa/config.json)
 
     if [ "$2" == "-r" ]; then
 
@@ -48,8 +48,6 @@ elif [ "$1" == "wall" ]; then
         cp "$HOME/$wall_path/$3" "$HOME/$wall_path/wallpaper"
         pkill hyprpaper && hyprpaper &
         disown %1
-
-    fi
 
 # Random Utils
 elif [ "$1" == "utils" ]; then
