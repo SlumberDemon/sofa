@@ -19,7 +19,7 @@ sudo cp sofa/sofa /usr/local/bin && sudo cp sofa/sofa.py /usr/local/bin
 ## Setup
 
 ```
-sofa install
+sofa setup
 ```
 
 > Verify that `sofa` is installed by running the following.
