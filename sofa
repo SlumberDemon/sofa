@@ -29,8 +29,8 @@ elif [ "$1" == "setup" ]; then
 
     mkdir -p ~/.sofa
     mkdir -p ~/.sofa/templates
-    cp .sofa/sofa.py ~/.sofa/sofa.py
-    cp .sofa/config.json ~/.sofa/config.json
+    cp ~/sofa/sofa.py ~/.sofa/sofa.py
+    cp ~/sofa/config.json ~/.sofa/config.json
 
 elif [ "$1" == "wall" ]; then
 
