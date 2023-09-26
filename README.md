@@ -14,6 +14,8 @@ Soft Organic Furniture Arrangement
 git clone https://github.com/SlumberDemon/sofa.git
 
 sudo cp sofa/sofa /usr/local/bin
+
+sudo chmod +x /usr/local/bin/sofa
 ```
 
 ## Setup
