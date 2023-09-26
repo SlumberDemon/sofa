@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# maybe add some sort of startepage idk
+
 show_help() {
     printf "
     Usage:
@@ -34,7 +36,7 @@ elif [ "$1" == "install" ]; then
 
 elif [ "$1" == "wall" ]; then
 
-    wall_path=$(grep -o '"wallpath": *"[^"]*"' ~/.sofa/config.json)
+    wall_path=$(jq -r '.wallpath' ~/.sofa/config.json)
 
     if [ "$2" == "-r" ]; then
 
@@ -49,6 +51,23 @@ elif [ "$1" == "wall" ]; then
         pkill hyprpaper && hyprpaper &
         disown %1
 
+    else
+
+        selected_wallpaper=$(find "$HOME/$wall_path" -type f | fzf)
+
+        if [ -n "$selected_wallpaper" ]; then
+
+            cp "$selected_wallpaper" "$HOME/$wall_path/wallpaper"
+            pkill hyprpaper && hyprpaper &
+            disown %1
+
+        else
+
+            echo "No wallpaper selected"
+
+        fi
+    fi
+
 # Random Utils
 elif [ "$1" == "utils" ]; then
 
@@ -57,7 +76,7 @@ elif [ "$1" == "utils" ]; then
     elif [ "$2" == "-i" ]; then
         yay -S python-material-color-utilities swww ttf-tabler-icons python-pywal wlogout gtklock gtklock-playerctl-module gtklock-powerbar-module gtklock-userinfo-module nerd-fonts-inter eww-try-wayland-git gradience fish playerctl starship nautilus gnome-clocks-git gnome-calendar-git gnome-calculator-gtk3 baobab-gtk3 eog-git gnome-font-viewer-git gnome-text-editor-git git
     elif [ "$2" == "-n" ]; then
-        yay -S python-material-color-utilities grep sed
+        yay -S python-material-color-utilities fzf hyprpaper jq
     fi
 ###
 

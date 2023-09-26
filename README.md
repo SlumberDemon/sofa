@@ -69,8 +69,10 @@ sofa --help
 
 ## Dependencies
 
+### linux
+
 > Install with [`yay`](https://github.com/Jguer/yay)
 
 ```
-yay -S python-material-color-utilities grep sed
+yay -S python-material-color-utilities fzf hyprpaper jq
 ```
