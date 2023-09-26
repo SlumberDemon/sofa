@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# maybe add some sort of startepage idk
-
 show_help() {
     printf "
     Usage:
