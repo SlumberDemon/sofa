@@ -53,17 +53,13 @@ elif [ "$1" == "wall" ]; then
 
     else
 
-        selected_wallpaper=$(find "$HOME/$wall_path" -type f | fzf)
+        selected_wallpaper=$(find "$HOME/$wall_path" -type f | fzf --preview 'kitty icat {}')
 
         if [ -n "$selected_wallpaper" ]; then
 
             cp "$selected_wallpaper" "$HOME/$wall_path/wallpaper"
             pkill hyprpaper && hyprpaper &
             disown %1
-
-        else
-
-            echo "No wallpaper selected"
 
         fi
     fi
