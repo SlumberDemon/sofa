@@ -87,6 +87,23 @@ elif [ "$1" == "color" ]; then
 
     fi
 
+elif [ "$1" == "full" ]; then
+
+    selected_wallpaper=$(find "$HOME/$wall_path" -type f | fzf --preview 'kitty icat {}')
+
+    if [ -n "$selected_wallpaper" ]; then
+
+        cp "$selected_wallpaper" "$HOME/$wall_path/wallpaper"
+        pkill hyprpaper && hyprpaper &
+        disown %1
+        python3 ~/.sofa/sofa.py templater
+        wal -c
+        wal -i "$HOME/$wall_path/wallpaper"
+        gradience-cli monet --theme dark -p "$HOME/$wall_path/wallpaper" -n wallpaper
+        gradience-cli apply -n wallpaper
+
+    fi
+
 # Random Utils
 elif [ "$1" == "utils" ]; then
 
