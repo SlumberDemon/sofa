@@ -1,6 +1,6 @@
 {
     "wallpath": "Pictures",
     "templates": [
-        {"name": "example", "path": "~/.config/example/example.conf"}
+        {"name": "example", "path": "/.config/example/example.conf"}
     ]
 }

@@ -51,17 +51,51 @@ sofa sofa
 
 > Color templates for anything.
 
+#### Config
+
 ```json
 { "name": "example", "path": "~/.config/example/example.conf" }
 ```
 
-#### name
+##### name
 
 > Name of the template in `.sofa/templates`. (Note: must be without file extension)
 
-#### path
+##### path
 
-> Path where the generated template gets saved to. (Note: must include file name and extension)
+> Path where the generated template gets saved to. (Note: must include file name and extension and be accessible via `$HOME`)
+
+#### Usables
+
+| Value                | Variable               |
+| -------------------- | ---------------------- |
+| primary              | {primary}              |
+| onPrimary            | {onPrimary}            |
+| primaryContainer     | {primaryContainer}     |
+| onPrimaryContainer   | {onPrimaryContainer}   |
+| secondary            | {secondary}            |
+| onSecondary          | {onSecondary}          |
+| secondaryContainer   | {secondaryContainer}   |
+| onSecondaryContainer | {onSecondaryContainer} |
+| tertiary             | {tertiary}             |
+| onTertiary           | {onTertiary}           |
+| tertiaryContainer    | {tertiaryContainer}    |
+| onTertiaryContainer  | {onTertiaryContainer}  |
+| error                | {error}                |
+| onError              | {onError}              |
+| errorContainer       | {errorContainer}       |
+| onErrorContainer     | {onErrorContainer}     |
+| background           | {background}           |
+| onBackground         | {onBackground}         |
+| surface              | {surface}              |
+| onSurface            | {onSurface}            |
+| surfaceVariant       | {surfaceVariant}       |
+| onSurfaceVariant     | {onSurfaceVariant}     |
+| outline              | {outline}              |
+| shadow               | {shadow}               |
+| inverseSurface       | {inverseSurface}       |
+| inverseOnSurface     | {inverseOnSurface}     |
+| inversePrimary       | {inversePrimary}       |
 
 ## Usage
 
