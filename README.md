@@ -39,7 +39,7 @@ sofa sofa
 ```json
 {
   "wallpath": "Pictures", // Path for wallpapers
-  "templates": [{ "name": "example", "path": "~/.config/example/example.conf" }] // Templater
+  "templates": [{ "name": "example", "path": "/.config/example/example.conf" }] // Templater
 }
 ```
 
