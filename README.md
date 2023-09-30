@@ -39,7 +39,7 @@ sofa sofa
 ```json
 {
   "wallpath": "Pictures", // Path for wallpapers
-  "templates": [{ "name": "example", "path": "/.config/example/example.conf" }] // Templater
+  "templates": [{ "name": "example", "path": "/.config/example/example.conf", "type": "hex" }] // Templater
 }
 ```
 
@@ -64,6 +64,10 @@ sofa sofa
 ##### path
 
 > Path where the generated template gets saved to. (Note: must include file name and extension and be accessible via `$HOME`)
+
+#### type
+
+> Tpye how color data is represented. (Note: can only be hex/argb)
 
 #### Usables
 

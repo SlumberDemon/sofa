@@ -8,6 +8,7 @@ show_help() {
     Options:
       sofa              sofa
       setup             Setup sofa 
+      update            Update sofa
     
       wall              Set wallpaper
       wall -r           Set random wallpaper
@@ -39,6 +40,10 @@ elif [ "$1" == "setup" ]; then
     mkdir -p ~/.sofa/templates
     cp ~/sofa/.sofa/sofa.py ~/.sofa/sofa.py
     cp ~/sofa/.sofa/config.json ~/.sofa/config.json
+
+elif [ "$1" == "update" ]; then
+
+    cp ~/sofa/.sofa/sofa.py ~/.sofa/sofa.py
 
 elif [ "$1" == "wall" ]; then
 

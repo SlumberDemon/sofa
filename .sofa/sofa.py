@@ -20,118 +20,116 @@ if sys.argv[1] == "templater":
 
         return colorscheme
 
+    def type_converter(value, type: str):  # hex | argb
+        if type == "hex":
+            return str(hexFromArgb(value))
+        if type == "argb":
+            return str(value)
+
     def templater(colors):
         for i in config["templates"]:
             with open(str(Path.home()) + f"/.sofa/templates/{i['name']}", "rt") as a:
                 with open(str(Path.home()) + i["path"], "wt") as b:
                     for l in a:
                         b.write(
-                            l.replace(
-                                "{primary}", str(hexFromArgb(colors.get_primary()))
-                            )
-                            .replace(
-                                "{onPrimary}", str(hexFromArgb(colors.get_onPrimary()))
-                            )
+                            l.replace("{primary}", type_converter(colors.get_primary(), i["type"]))
+                            .replace("{onPrimary}", type_converter(colors.get_onPrimary(), i["type"]))
                             .replace(
                                 "{primaryContainer}",
-                                str(
-                                    hexFromArgb(colors.get_primaryContainer()),
-                                ),
+                                type_converter(colors.get_primaryContainer(), i["type"]),
                             )
                             .replace(
                                 "{onPrimaryContainer}",
-                                str(hexFromArgb(colors.get_onPrimaryContainer())),
+                                type_converter(colors.get_onPrimaryContainer(), i["type"]),
                             )
-                            .replace(
-                                "{secondary}", str(hexFromArgb(colors.get_secondary()))
-                            )
+                            .replace("{secondary}", type_converter(colors.get_secondary(), i["type"]))
                             .replace(
                                 "{onSecondary}",
-                                str(hexFromArgb(colors.get_onSecondary())),
+                                type_converter(colors.get_onSecondary(), i["type"]),
                             )
                             .replace(
                                 "{secondaryContainer}",
-                                str(hexFromArgb(colors.get_secondaryContainer())),
+                                type_converter(colors.get_secondaryContainer(), i["type"]),
                             )
                             .replace(
                                 "{onSecondaryContainer}",
-                                str(hexFromArgb(colors.get_onSecondaryContainer())),
+                                type_converter(colors.get_onSecondaryContainer(), i["type"]),
                             )
                             .replace(
                                 "{tertiary}",
-                                str(hexFromArgb(colors.get_tertiary())),
+                                type_converter(colors.get_tertiary(), i["type"]),
                             )
                             .replace(
                                 "{onTertiary}",
-                                str(hexFromArgb(colors.get_onTertiary())),
+                                type_converter(colors.get_onTertiary(), i["type"]),
                             )
                             .replace(
                                 "{tertiaryContainer}",
-                                str(hexFromArgb(colors.get_tertiaryContainer())),
+                                type_converter(colors.get_tertiaryContainer(), i["type"]),
                             )
                             .replace(
                                 "{onTertiaryContainer}",
-                                str(hexFromArgb(colors.get_onTertiaryContainer())),
+                                type_converter(colors.get_onTertiaryContainer(), i["type"]),
                             )
                             .replace(
                                 "{error}",
-                                str(hexFromArgb(colors.get_error())),
+                                type_converter(colors.get_error(), i["type"]),
                             )
                             .replace(
                                 "{onError}",
-                                str(hexFromArgb(colors.get_onError())),
+                                type_converter(colors.get_onError(), i["type"]),
                             )
                             .replace(
                                 "{errorContainer}",
-                                str(hexFromArgb(colors.get_errorContainer())),
+                                type_converter(colors.get_errorContainer(), i["type"]),
                             )
                             .replace(
                                 "{onErrorContainer}",
-                                str(hexFromArgb(colors.get_onErrorContainer())),
+                                type_converter(colors.get_onErrorContainer(), i["type"]),
                             )
                             .replace(
                                 "{background}",
-                                str(hexFromArgb(colors.get_background())),
+                                type_converter(colors.get_background(), i["type"]),
                             )
                             .replace(
                                 "{onBackground}",
-                                str(hexFromArgb(colors.get_onBackground())),
+                                type_converter(colors.get_onBackground(), i["type"]),
                             )
                             .replace(
                                 "{surface}",
-                                str(hexFromArgb(colors.get_surface())),
+                                type_converter(colors.get_surface(), i["type"]),
                             )
                             .replace(
                                 "{onSurface}",
-                                str(hexFromArgb(colors.get_onSurface())),
+                                type_converter(colors.get_onSurface(), i["type"]),
                             )
                             .replace(
                                 "{surfaceVariant}",
-                                str(hexFromArgb(colors.get_surfaceVariant())),
+                                type_converter(colors.get_surfaceVariant(), i["type"]),
                             )
                             .replace(
                                 "{onSurfaceVariant}",
-                                str(hexFromArgb(colors.get_onSurfaceVariant())),
+                                type_converter(colors.get_onSurfaceVariant(), i["type"]),
                             )
                             .replace(
                                 "{outline}",
-                                str(hexFromArgb(colors.get_outline())),
+                                type_converter(colors.get_outline(), i["type"]),
                             )
                             .replace(
                                 "{shadow}",
-                                str(hexFromArgb(colors.get_shadow())),
+                                type_converter(colors.get_shadow(), i["type"]),
                             )
                             .replace(
                                 "{inverseSurface}",
-                                str(hexFromArgb(colors.get_inverseSurface())),
+                                type_converter(colors.get_inverseSurface(), i["type"]),
                             )
                             .replace(
                                 "{inverseOnSurface}",
-                                str(hexFromArgb(colors.get_inverseOnSurface())),
+                                type_converter(colors.get_inverseOnSurface(), i["type"]),
                             )
                             .replace(
                                 "{inversePrimary}",
-                                str(hexFromArgb(colors.get_inversePrimary())),
+                                type_converter(colors.get_inversePrimary(), i["type"]),
                             )
                         )
 
