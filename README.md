@@ -54,7 +54,7 @@ sofa sofa
 #### Config
 
 ```json
-{ "name": "example", "path": "~/.config/example/example.conf" }
+{ "name": "example", "path": "/.config/example/example.conf", "type": "hex" }
 ```
 
 ##### name

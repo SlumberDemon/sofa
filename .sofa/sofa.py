@@ -32,28 +32,45 @@ if sys.argv[1] == "templater":
                 with open(str(Path.home()) + i["path"], "wt") as b:
                     for l in a:
                         b.write(
-                            l.replace("{primary}", type_converter(colors.get_primary(), i["type"]))
-                            .replace("{onPrimary}", type_converter(colors.get_onPrimary(), i["type"]))
+                            l.replace(
+                                "{primary}",
+                                type_converter(colors.get_primary(), i["type"]),
+                            )
+                            .replace(
+                                "{onPrimary}",
+                                type_converter(colors.get_onPrimary(), i["type"]),
+                            )
                             .replace(
                                 "{primaryContainer}",
-                                type_converter(colors.get_primaryContainer(), i["type"]),
+                                type_converter(
+                                    colors.get_primaryContainer(), i["type"]
+                                ),
                             )
                             .replace(
                                 "{onPrimaryContainer}",
-                                type_converter(colors.get_onPrimaryContainer(), i["type"]),
+                                type_converter(
+                                    colors.get_onPrimaryContainer(), i["type"]
+                                ),
                             )
-                            .replace("{secondary}", type_converter(colors.get_secondary(), i["type"]))
+                            .replace(
+                                "{secondary}",
+                                type_converter(colors.get_secondary(), i["type"]),
+                            )
                             .replace(
                                 "{onSecondary}",
                                 type_converter(colors.get_onSecondary(), i["type"]),
                             )
                             .replace(
                                 "{secondaryContainer}",
-                                type_converter(colors.get_secondaryContainer(), i["type"]),
+                                type_converter(
+                                    colors.get_secondaryContainer(), i["type"]
+                                ),
                             )
                             .replace(
                                 "{onSecondaryContainer}",
-                                type_converter(colors.get_onSecondaryContainer(), i["type"]),
+                                type_converter(
+                                    colors.get_onSecondaryContainer(), i["type"]
+                                ),
                             )
                             .replace(
                                 "{tertiary}",
@@ -65,11 +82,15 @@ if sys.argv[1] == "templater":
                             )
                             .replace(
                                 "{tertiaryContainer}",
-                                type_converter(colors.get_tertiaryContainer(), i["type"]),
+                                type_converter(
+                                    colors.get_tertiaryContainer(), i["type"]
+                                ),
                             )
                             .replace(
                                 "{onTertiaryContainer}",
-                                type_converter(colors.get_onTertiaryContainer(), i["type"]),
+                                type_converter(
+                                    colors.get_onTertiaryContainer(), i["type"]
+                                ),
                             )
                             .replace(
                                 "{error}",
@@ -85,7 +106,9 @@ if sys.argv[1] == "templater":
                             )
                             .replace(
                                 "{onErrorContainer}",
-                                type_converter(colors.get_onErrorContainer(), i["type"]),
+                                type_converter(
+                                    colors.get_onErrorContainer(), i["type"]
+                                ),
                             )
                             .replace(
                                 "{background}",
@@ -109,7 +132,9 @@ if sys.argv[1] == "templater":
                             )
                             .replace(
                                 "{onSurfaceVariant}",
-                                type_converter(colors.get_onSurfaceVariant(), i["type"]),
+                                type_converter(
+                                    colors.get_onSurfaceVariant(), i["type"]
+                                ),
                             )
                             .replace(
                                 "{outline}",
@@ -125,7 +150,9 @@ if sys.argv[1] == "templater":
                             )
                             .replace(
                                 "{inverseOnSurface}",
-                                type_converter(colors.get_inverseOnSurface(), i["type"]),
+                                type_converter(
+                                    colors.get_inverseOnSurface(), i["type"]
+                                ),
                             )
                             .replace(
                                 "{inversePrimary}",
