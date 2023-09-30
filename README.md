@@ -114,5 +114,5 @@ sofa --help
 > Install with [`yay`](https://github.com/Jguer/yay)
 
 ```
-yay -S python-material-color-utilities fzf hyprpaper jq pywal gradience
+yay -S python-material-color-utilities fzf hyprpaper jq python-pywal gradience pywalfox
 ```

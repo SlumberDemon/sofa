@@ -43,6 +43,7 @@ elif [ "$1" == "setup" ]; then
 
 elif [ "$1" == "update" ]; then
 
+    sudo cp sofa/sofa /usr/local/bin  
     cp ~/sofa/.sofa/sofa.py ~/.sofa/sofa.py
 
 elif [ "$1" == "wall" ]; then
@@ -80,6 +81,7 @@ elif [ "$1" == "color" ]; then
         python3 ~/.sofa/sofa.py templater
         wal -c
         wal -i "$HOME/$wall_path/$3"
+        pywalfox update
         gradience-cli monet --theme dark -p "$HOME/$wall_path/$3" -n wallpaper
         gradience-cli apply -n wallpaper
 
@@ -87,6 +89,7 @@ elif [ "$1" == "color" ]; then
         python3 ~/.sofa/sofa.py templater
         wal -c
         wal -i "$HOME/$wall_path/wallpaper"
+        pywalfox update
         gradience-cli monet --theme dark -p "$HOME/$wall_path/wallpaper" -n wallpaper
         gradience-cli apply -n wallpaper
 
@@ -104,6 +107,7 @@ elif [ "$1" == "full" ]; then
         python3 ~/.sofa/sofa.py templater
         wal -c
         wal -i "$HOME/$wall_path/wallpaper"
+        pywalfox update
         gradience-cli monet --theme dark -p "$HOME/$wall_path/wallpaper" -n wallpaper
         gradience-cli apply -n wallpaper
 
@@ -117,7 +121,7 @@ elif [ "$1" == "utils" ]; then
     elif [ "$2" == "-i" ]; then
         yay -S python-material-color-utilities swww ttf-tabler-icons python-pywal wlogout gtklock gtklock-playerctl-module gtklock-powerbar-module gtklock-userinfo-module nerd-fonts-inter eww-try-wayland-git gradience fish playerctl starship nautilus gnome-clocks-git gnome-calendar-git gnome-calculator-gtk3 baobab-gtk3 eog-git gnome-font-viewer-git gnome-text-editor-git git
     elif [ "$2" == "-n" ]; then
-        yay -S python-material-color-utilities fzf hyprpaper jq pywal gradience
+        yay -S python-material-color-utilities fzf hyprpaper jq python-pywal gradience pywalfox
     fi
 ###
 
