@@ -38,14 +38,14 @@ sofa sofa
 
 ```json
 {
-  "wallpath": "Pictures", // Path for wallpapers
+  "wallpath": "Pictures",
   "templates": [
     {
       "name": "example",
       "path": "/.config/example/example.conf",
       "type": "hex"
     }
-  ] // Templater
+  ]
 }
 ```
 
