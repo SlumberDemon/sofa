@@ -57,8 +57,6 @@ sofa sofa
 
 > Color templates for anything.
 
-#### Config
-
 ```json
 { "name": "example", "path": "/.config/example/example.conf", "type": "hex" }
 ```
