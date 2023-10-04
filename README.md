@@ -18,12 +18,6 @@ sudo cp sofa/sofa /usr/local/bin
 sudo chmod +x /usr/local/bin/sofa
 ```
 
-## Setup
-
-```
-sofa setup
-```
-
 > Verify that `sofa` is installed by running the following.
 
 ```
@@ -31,6 +25,14 @@ sofa sofa
 ```
 
 > If successful, `sofa` should return 'sofa'.
+
+## Setup
+
+```
+sofa setup
+```
+
+> Default setup contains examples
 
 ## Configuration
 
