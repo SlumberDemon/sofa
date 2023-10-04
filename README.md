@@ -39,7 +39,13 @@ sofa sofa
 ```json
 {
   "wallpath": "Pictures", // Path for wallpapers
-  "templates": [{ "name": "example", "path": "/.config/example/example.conf", "type": "hex" }] // Templater
+  "templates": [
+    {
+      "name": "example",
+      "path": "/.config/example/example.conf",
+      "type": "hex"
+    }
+  ] // Templater
 }
 ```
 
@@ -67,7 +73,7 @@ sofa sofa
 
 #### type
 
-> Tpye how color data is represented. (Note: can only be hex/argb)
+> Format in which color data is represented. (Note: can only be hex/argb)
 
 #### Usables
 
