@@ -18,12 +18,6 @@ sudo cp sofa/sofa /usr/local/bin
 sudo chmod +x /usr/local/bin/sofa
 ```
 
-## Setup
-
-```
-sofa setup
-```
-
 > Verify that `sofa` is installed by running the following.
 
 ```
@@ -32,15 +26,28 @@ sofa sofa
 
 > If successful, `sofa` should return 'sofa'.
 
+## Setup
+
+```
+sofa setup
+```
+
+> Default setup contains examples
+
 ## Configuration
 
 `.sofa/config.json`
 
 ```json
 {
-  "mode": "light",
-  "wallpath": "Pictures", // Path for wallpapers
-  "templates": [{ "name": "example", "path": "/.config/example/example.conf", "type": "hex" }] // Templater
+  "wallpath": "Pictures",
+  "templates": [
+    { 
+      "name": "example", 
+      "path": "/.config/example/example.conf", 
+      "type": "hex" 
+      }
+      ]
 }
 ```
 
@@ -56,8 +63,6 @@ sofa sofa
 
 > Color templates for anything.
 
-#### Config
-
 ```json
 { "name": "example", "path": "/.config/example/example.conf", "type": "hex" }
 ```
@@ -72,7 +77,7 @@ sofa sofa
 
 #### type
 
-> Tpye how color data is represented. (Note: can only be hex/argb)
+> Format in which color data is represented. (Note: can only be hex/argb)
 
 #### Usables
 
