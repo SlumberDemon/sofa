@@ -160,4 +160,4 @@ if sys.argv[1] == "templater":
                             )
                         )
 
-    templater(fetch_colors("light"))
+    templater(fetch_colors(config["mode"]))

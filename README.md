@@ -38,10 +38,15 @@ sofa sofa
 
 ```json
 {
+  "mode": "light",
   "wallpath": "Pictures", // Path for wallpapers
   "templates": [{ "name": "example", "path": "/.config/example/example.conf", "type": "hex" }] // Templater
 }
 ```
+
+### mode
+
+> Light or dark, the choice is yours
 
 ### wallpath
 
