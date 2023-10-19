@@ -40,14 +40,15 @@ sofa setup
 
 ```json
 {
+  "mode": "light",
   "wallpath": "Pictures",
   "templates": [
     { 
       "name": "example", 
       "path": "/.config/example/example.conf", 
       "type": "hex" 
-      }
-      ]
+    }
+  ]
 }
 ```
 
