@@ -45,7 +45,7 @@ sofa setup
   "templates": [
     { 
       "name": "example", 
-      "path": "/.config/example/example.conf", 
+      "path": ".config/example/example.conf", 
       "type": "hex" 
     }
   ]
@@ -65,7 +65,7 @@ sofa setup
 > Color templates for anything.
 
 ```json
-{ "name": "example", "path": "/.config/example/example.conf", "type": "hex" }
+{ "name": "example", "path": ".config/example/example.conf", "type": "hex" }
 ```
 
 ##### name
