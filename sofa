@@ -43,7 +43,7 @@ elif [ "$1" == "setup" ]; then
 
 elif [ "$1" == "update" ]; then
 
-    sudo cp sofa/sofa /usr/local/bin  
+    sudo cp sofa/sofa /usr/local/bin
     cp ~/sofa/.sofa/sofa.py ~/.sofa/sofa.py
 
 elif [ "$1" == "wall" ]; then
@@ -110,6 +110,57 @@ elif [ "$1" == "full" ]; then
         pywalfox update
         gradience-cli monet --theme dark -p "$HOME/$wall_path/wallpaper" -n wallpaper
         gradience-cli apply -n wallpaper
+
+    fi
+
+elif [ "$1" == "new" ]; then
+
+    if [ "$2" == "stsc" ]; then # Sveltekit, TailwindCSS, Space, Code
+
+        npm create svelte@latest $3
+        cd $3
+        npm i
+        npm install -D tailwindcss postcss autoprefixer @sveltejs/adapter-node svelte-preprocess
+        npx tailwindcss init -p
+        echo "import adapter from '@sveltejs/adapter-node';
+import preprocess from 'svelte-preprocess';
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	preprocess: preprocess(),
+
+	kit: {
+		adapter: adapter()
+	}
+};
+
+export default config;" >svelte.config.js
+        echo "/** @type {import('tailwindcss').Config} */
+export default {
+	content: ['./src/**/*.{html,js,svelte,ts}'],
+	theme: {
+		extend: {}
+	},
+	plugins: []
+};" >tailwind.config.js
+        touch ./src/app.css
+        echo "@tailwind base;
+@tailwind components;
+@tailwind utilities;" >./src/app.css
+        touch ./src/routes/+layout.svelte
+        echo "<script>
+	import '../app.css';
+</script>
+
+<slot />" >'./src/routes/+layout.svelte'
+        touch Spacefile
+        echo "v: 0
+micros:
+  - name: $3
+    src: .
+    engine: svelte-kit
+    primary: true" >Spacefile
+        code .
 
     fi
 
