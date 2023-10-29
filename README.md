@@ -84,7 +84,7 @@ sofa setup
 
 ##### actions
 
-> Execute commands to restart apps for style application (Note: commands are run in order of array)
+> Execute commands after styles are generated (Note: commands are run in order of array)
 
 #### type
 
