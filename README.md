@@ -43,10 +43,11 @@ sofa setup
   "mode": "light",
   "wallpath": "Pictures",
   "templates": [
-    { 
-      "name": "example", 
-      "path": ".config/example/example.conf", 
-      "type": "hex" 
+    {
+      "name": "example",
+      "path": ".config/example/example.conf",
+      "type": "hex",
+      "actions": ["app -q", "app"]
     }
   ]
 }
@@ -65,7 +66,12 @@ sofa setup
 > Color templates for anything.
 
 ```json
-{ "name": "example", "path": ".config/example/example.conf", "type": "hex" }
+{
+  "name": "example",
+  "path": ".config/example/example.conf",
+  "type": "hex",
+  "actions": ["app -q", "app"]
+}
 ```
 
 ##### name
@@ -75,6 +81,10 @@ sofa setup
 ##### path
 
 > Path where the generated template gets saved to. (Note: must include file name and extension and be accessible via `$HOME`)
+
+##### actions
+
+> Execute commands to restart apps for style application (Note: commands are run in order of array)
 
 #### type
 

@@ -1,5 +1,6 @@
-import json
+import os
 import sys
+import json
 from pathlib import Path
 
 from material_color_utilities_python import hexFromArgb, themeFromImage
@@ -58,6 +59,11 @@ def type_converter(value, type: str) -> str:  # hex | argb
     return str(value)
 
 
+def activation(actions):
+    for a in actions:
+        os.system(a)
+
+
 def templater(colors) -> None:
     for template in config["templates"]:
         with (
@@ -76,6 +82,8 @@ def templater(colors) -> None:
                         type_converter(getattr(colors, func)(), template["type"]),
                     )
                 b.write(filled_line)
+        if "actions" in template:
+            activation(template["actions"])
 
 
 if __name__ == "__main__":

@@ -2,6 +2,6 @@
     "mode": "light",
     "wallpath": "Pictures",
     "templates": [
-        {"name": "example", "path": ".config/example/example.conf"}
+        {"name": "example", "path": ".config/example/example.conf", "type": "hex", "actions": ["app -q", "app"]}
     ]
 }
