@@ -14,7 +14,7 @@ show_help() {
       wall -r           Set random wallpaper
       wall -i <image>   Set wallpaper from image
 
-      color -c          Set colors with current wallpaper
+      color             Set colors with current wallpaper
 
       full              Set wallpaper and colors
       full -r           Sets random wallpaper and colors
@@ -77,16 +77,12 @@ elif [ "$1" == "wall" ]; then
 
 elif [ "$1" == "color" ]; then
 
-    if [ "$2" == "-c" ]; then
-
-        python3 ~/.sofa/sofa.py templater
-        wal -c
-        wal -i "$HOME/$wall_path/wallpaper"
-        pywalfox update
-        gradience-cli monet --theme dark -p "$HOME/$wall_path/wallpaper" -n wallpaper
-        gradience-cli apply -n wallpaper
-
-    fi
+    python3 ~/.sofa/sofa.py templater
+    wal -c
+    wal -i "$HOME/$wall_path/wallpaper"
+    pywalfox update
+    gradience-cli monet --theme dark -p "$HOME/$wall_path/wallpaper" -n wallpaper
+    gradience-cli apply -n wallpaper
 
 elif [ "$1" == "full" ]; then
 
