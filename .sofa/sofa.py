@@ -59,7 +59,7 @@ def type_converter(value, type: str) -> str:  # hex | argb
     return str(value)
 
 
-def activation(actions):
+def activation(actions) -> None:
     for a in actions:
         os.system(a)
 
