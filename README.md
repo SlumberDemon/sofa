@@ -137,3 +137,5 @@ sofa --help
 ```
 yay -S python-material-color-utilities fzf hyprpaper jq python-pywal gradience pywalfox
 ```
+
+> Extra pywal theming for [`Vscode`](https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme), [`Firefox`](https://addons.mozilla.org/en-US/firefox/addon/pywalfox/), [`Rofi`](https://github.com/dylanaraps/pywal/wiki/Customization#rofi)
