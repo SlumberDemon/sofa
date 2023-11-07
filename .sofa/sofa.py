@@ -1,10 +1,9 @@
 import os
 import sys
 import json
-from pathlib import Path
-
-from material_color_utilities_python import hexFromArgb, themeFromImage
 from PIL import Image
+from pathlib import Path
+from material_color_utilities_python import hexFromArgb, themeFromImage
 
 config = json.loads(
     Path.home().joinpath(".sofa", "config.json").read_text(encoding="utf-8")
