@@ -51,12 +51,13 @@ def fetch_colors(type: str):  # light | dark
     newtheme = themeFromImage(img)
     return newtheme.get("schemes", {}).get(type)
 
-
-def type_converter(value, type: str) -> str:  # hex | argb
+def type_converter(value, type: str) -> str:  # hex | argb | rgb
     if type == "hex":
         return hexFromArgb(value)
+    if type == "rgb":
+        h = hexFromArgb(value).lstrip("#")
+        return str(tuple(int(h[i:i+2], 16) for i in (0, 2, 4)))
     return str(value)
-
 
 def activation(actions) -> None:
     for a in actions:
