@@ -90,6 +90,12 @@ sofa setup
 
 > Format in which color data is represented. (Note: can only be hex/argb)
 
+| Type                 | Format                 |
+| -------------------- | ---------------------- |
+| hex                  | #ffffff                | 
+| argb                 | 4286130513             | 
+| argb                 | (0, 0, 0)              | 
+
 #### Usables
 
 | Value                | Variable               |
