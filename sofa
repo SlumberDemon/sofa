@@ -6,18 +6,20 @@ show_help() {
       %s [option]
     
     Options:
-      sofa              sofa
-      setup             Setup sofa 
-      update            Update sofa
+      sofa                      sofa
+      setup                     Setup sofa 
+      update                    Update sofa
     
-      wall              Set wallpaper
-      wall -r           Set random wallpaper
-      wall -i <image>   Set wallpaper from image
+      wall                      Set wallpaper
+      wall -r                   Set random wallpaper
+      wall -i <image>           Set wallpaper from image name
+      wall -p <path>            Set walpaper from image path (in $HOME)
 
-      color             Set colors with current wallpaper
+      color                     Set colors with current wallpaper
+      color -c <image> <mode>   Set color from image name and light/dark mode
 
-      full              Set wallpaper and colors
-      full -r           Sets random wallpaper and colors
+      full                      Set wallpaper and colors
+      full -r                   Sets random wallpaper and colors
     \n" "${0##*/}"
 }
 
@@ -62,6 +64,12 @@ elif [ "$1" == "wall" ]; then
         pkill hyprpaper && hyprpaper &
         disown %1
 
+    elif [ "$2" == "-p" ]; then
+
+        cp "$HOME/$3" "$HOME/$wall_path/wallpaper"
+        pkill hyprpaper && hyprpaper &
+        disown %1
+
     else
 
         selected_wallpaper=$(find "$HOME/$wall_path" -type f | fzf --preview 'kitty icat {}')
@@ -77,12 +85,25 @@ elif [ "$1" == "wall" ]; then
 
 elif [ "$1" == "color" ]; then
 
-    python3 ~/.sofa/sofa.py templater
-    wal -c
-    wal -i "$HOME/$wall_path/wallpaper"
-    pywalfox update
-    gradience-cli monet --theme dark -p "$HOME/$wall_path/wallpaper" -n wallpaper
-    gradience-cli apply -n wallpaper
+    if [ "$2" == "-c" ]; then
+    
+        python3 ~/.sofa/sofa.py templater $4
+        wal -c
+        wal -i "$HOME/$wall_path/$3"
+        pywalfox update
+        gradience-cli monet --theme dark -p "$HOME/$wall_path/$3" -n custom
+        gradience-cli apply -n custom
+
+    else
+
+        python3 ~/.sofa/sofa.py templater
+        wal -c
+        wal -i "$HOME/$wall_path/wallpaper"
+        pywalfox update
+        gradience-cli monet --theme dark -p "$HOME/$wall_path/wallpaper" -n wallpaper
+        gradience-cli apply -n wallpaper
+
+    fi
 
 elif [ "$1" == "full" ]; then
 

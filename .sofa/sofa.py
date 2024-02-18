@@ -1,9 +1,10 @@
+import json
 import os
 import sys
-import json
-from PIL import Image
 from pathlib import Path
+
 from material_color_utilities_python import hexFromArgb, themeFromImage
+from PIL import Image
 
 config = json.loads(
     Path.home().joinpath(".sofa", "config.json").read_text(encoding="utf-8")
@@ -51,13 +52,15 @@ def fetch_colors(type: str):  # light | dark
     newtheme = themeFromImage(img)
     return newtheme.get("schemes", {}).get(type)
 
+
 def type_converter(value, type: str) -> str:  # hex | argb | rgb
     if type == "hex":
         return hexFromArgb(value)
     if type == "rgb":
         h = hexFromArgb(value).lstrip("#")
-        return str(tuple(int(h[i:i+2], 16) for i in (0, 2, 4)))
+        return str(tuple(int(h[i : i + 2], 16) for i in (0, 2, 4)))
     return str(value)
+
 
 def activation(actions) -> None:
     for a in actions:
@@ -88,4 +91,7 @@ def templater(colors) -> None:
 
 if __name__ == "__main__":
     if sys.argv[1] == "templater":
-        templater(fetch_colors(config["mode"]))
+        mode = config["mode"]
+        if sys.argv[2]:
+            mode = sys.argv[2]
+    templater(fetch_colors(mode))
