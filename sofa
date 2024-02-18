@@ -16,6 +16,7 @@ show_help() {
       wall -p <path>            Set walpaper from image path (in $HOME)
 
       color                     Set colors with current wallpaper
+      color -m <mode>           Set light/dark mode
       color -c <image> <mode>   Set color from image name and light/dark mode
 
       full                      Set wallpaper and colors
@@ -91,8 +92,17 @@ elif [ "$1" == "color" ]; then
         wal -c
         wal -i "$HOME/$wall_path/$3"
         pywalfox update
-        gradience-cli monet --theme dark -p "$HOME/$wall_path/$3" -n custom
+        gradience-cli monet --theme $4 -p "$HOME/$wall_path/$3" -n custom
         gradience-cli apply -n custom
+
+    elif [ "$2" == "-m" ]; then
+
+        python3 ~/.sofa/sofa.py templater $3
+        wal -c
+        wal -i "$HOME/$wall_path/wallpaper"
+        pywalfox update
+        gradience-cli monet --theme $3 -p "$HOME/$wall_path/wallpaper" -n mode
+        gradience-cli apply -n mode
 
     else
 
