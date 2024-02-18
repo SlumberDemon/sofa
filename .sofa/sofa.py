@@ -92,6 +92,6 @@ def templater(colors) -> None:
 if __name__ == "__main__":
     if sys.argv[1] == "templater":
         mode = config["mode"]
-        if sys.argv[2]:
+        if len(sys.argv) > 2:
             mode = sys.argv[2]
     templater(fetch_colors(mode))
