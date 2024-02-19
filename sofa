@@ -20,7 +20,7 @@ show_help() {
       color -c <image> <mode>   Set color from image name and light/dark mode
 
       full                      Set wallpaper and colors
-      full -r                   Sets random wallpaper and colors
+      full -r                   Set random wallpaper and colors
     \n" "${0##*/}"
 }
 
