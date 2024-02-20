@@ -56,20 +56,17 @@ elif [ "$1" == "wall" ]; then
         wall_file=$(ls "$HOME/$wall_path/" | shuf -n 1)
 
         cp "$HOME/$wall_path/$wall_file" "$HOME/$wall_path/wallpaper"
-        pkill hyprpaper && hyprpaper &
-        disown %1
+        pkill hyprpaper && nohup hyprpaper
 
     elif [ "$2" == "-i" ]; then
 
         cp "$HOME/$wall_path/$3" "$HOME/$wall_path/wallpaper"
-        pkill hyprpaper && hyprpaper &
-        disown %1
+        pkill hyprpaper && nohup hyprpaper
 
     elif [ "$2" == "-p" ]; then
 
         cp "$HOME/$3" "$HOME/$wall_path/wallpaper"
-        pkill hyprpaper && hyprpaper &
-        disown %1
+        pkill hyprpaper && nohup hyprpaper
 
     else
 
@@ -78,8 +75,7 @@ elif [ "$1" == "wall" ]; then
         if [ -n "$selected_wallpaper" ]; then
 
             cp "$selected_wallpaper" "$HOME/$wall_path/wallpaper"
-            pkill hyprpaper && hyprpaper &
-            disown %1
+            pkill hyprpaper && nohup hyprpaper
 
         fi
     fi
@@ -122,9 +118,7 @@ elif [ "$1" == "full" ]; then
         wall_file=$(ls "$HOME/$wall_path/" | shuf -n 1)
 
         cp "$HOME/$wall_path/$wall_file" "$HOME/$wall_path/wallpaper"
-        pkill hyprpaper && hyprpaper &
-        disown %1
-        python3 ~/.sofa/sofa.py templater
+        pkill hyprpaper && nohup hyprpaper
         wal -c
         wal -i "$HOME/$wall_path/wallpaper"
         pywalfox update
@@ -138,8 +132,7 @@ elif [ "$1" == "full" ]; then
         if [ -n "$selected_wallpaper" ]; then
 
             cp "$selected_wallpaper" "$HOME/$wall_path/wallpaper"
-            pkill hyprpaper && hyprpaper &
-            disown %1
+            pkill hyprpaper && nohup hyprpaper
             python3 ~/.sofa/sofa.py templater
             wal -c
             wal -i "$HOME/$wall_path/wallpaper"
