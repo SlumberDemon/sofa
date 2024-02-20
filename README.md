@@ -59,7 +59,7 @@ sofa setup
 
 ### wallpath
 
-> Define where `sofa` fetches wallpapers from. (Note: must be accessible via `$HOME`)
+> Define where `sofa` fetches wallpapers from. (Note: must be accessible via `$HOME`) Learn how to setup wallpapers [here](#wallpapers)
 
 ### templates
 
@@ -141,7 +141,12 @@ sofa --help
 > Install with [`yay`](https://github.com/Jguer/yay)
 
 ```
-yay -S python-material-color-utilities fzf hyprpaper jq python-pywal gradience pywalfox
+yay -S python-material-color-utilities fzf swww jq python-pywal gradience pywalfox hyprpaper
 ```
 
 > Extra pywal theming for [`Vscode`](https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme), [`Firefox`](https://addons.mozilla.org/en-US/firefox/addon/pywalfox/), [`Rofi`](https://github.com/dylanaraps/pywal/wiki/Customization#rofi)
+
+## Thank you
+
+- [End_4's config](https://github.com/end-4/dots-hyprland), for inspirations ~~and code snippets~~
+

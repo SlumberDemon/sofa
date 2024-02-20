@@ -8,7 +8,6 @@ show_help() {
     Options:
       sofa                      sofa
       setup                     Setup sofa 
-      update                    Update sofa
     
       wall                      Set wallpaper
       wall -r                   Set random wallpaper
@@ -56,17 +55,19 @@ elif [ "$1" == "wall" ]; then
         wall_file=$(ls "$HOME/$wall_path/" | shuf -n 1)
 
         cp "$HOME/$wall_path/$wall_file" "$HOME/$wall_path/wallpaper"
-        pkill hyprpaper && nohup hyprpaper
+        # pkill hyprpaper && nohup hyprpaper
 
     elif [ "$2" == "-i" ]; then
 
         cp "$HOME/$wall_path/$3" "$HOME/$wall_path/wallpaper"
-        pkill hyprpaper && nohup hyprpaper
+        # pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
+        swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
 
     elif [ "$2" == "-p" ]; then
 
         cp "$HOME/$3" "$HOME/$wall_path/wallpaper"
-        pkill hyprpaper && nohup hyprpaper
+        # pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
+        swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
 
     else
 
@@ -75,7 +76,8 @@ elif [ "$1" == "wall" ]; then
         if [ -n "$selected_wallpaper" ]; then
 
             cp "$selected_wallpaper" "$HOME/$wall_path/wallpaper"
-            pkill hyprpaper && nohup hyprpaper
+            # pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
+            swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
 
         fi
     fi
@@ -118,7 +120,9 @@ elif [ "$1" == "full" ]; then
         wall_file=$(ls "$HOME/$wall_path/" | shuf -n 1)
 
         cp "$HOME/$wall_path/$wall_file" "$HOME/$wall_path/wallpaper"
-        pkill hyprpaper && nohup hyprpaper
+        # pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
+        swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
+        python3 ~/.sofa/sofa.py templater            
         wal -c
         wal -i "$HOME/$wall_path/wallpaper"
         pywalfox update
@@ -132,7 +136,8 @@ elif [ "$1" == "full" ]; then
         if [ -n "$selected_wallpaper" ]; then
 
             cp "$selected_wallpaper" "$HOME/$wall_path/wallpaper"
-            pkill hyprpaper && nohup hyprpaper
+            # pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
+            swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
             python3 ~/.sofa/sofa.py templater
             wal -c
             wal -i "$HOME/$wall_path/wallpaper"
