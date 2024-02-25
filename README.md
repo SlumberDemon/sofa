@@ -149,4 +149,5 @@ yay -S python-material-color-utilities fzf swww jq python-pywal gradience pywalf
 ## Thank you
 
 - [End_4's config](https://github.com/end-4/dots-hyprland), for inspirations ~~and code snippets~~
+- [Lemon](https://github.com/lemonyte/), for improving the python code
 
