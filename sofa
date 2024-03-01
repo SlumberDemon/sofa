@@ -24,6 +24,7 @@ show_help() {
 }
 
 wall_path=$(jq -r '.wallpath' ~/.sofa/config.json)
+color_mode=$(jq -r '.mode' ~/.sofa/config.json)
 
 if [ "$1" == "--help" ]; then
 
@@ -108,7 +109,7 @@ elif [ "$1" == "color" ]; then
         wal -c
         wal -i "$HOME/$wall_path/wallpaper"
         pywalfox update
-        gradience-cli monet --theme dark -p "$HOME/$wall_path/wallpaper" -n wallpaper
+        gradience-cli monet --theme $color_mode -p "$HOME/$wall_path/wallpaper" -n wallpaper
         gradience-cli apply -n wallpaper
 
     fi
@@ -126,7 +127,7 @@ elif [ "$1" == "full" ]; then
         wal -c
         wal -i "$HOME/$wall_path/wallpaper"
         pywalfox update
-        gradience-cli monet --theme dark -p "$HOME/$wall_path/wallpaper" -n wallpaper
+        gradience-cli monet --theme $color_mode -p "$HOME/$wall_path/wallpaper" -n wallpaper
         gradience-cli apply -n wallpaper
 
     else
@@ -142,7 +143,7 @@ elif [ "$1" == "full" ]; then
             wal -c
             wal -i "$HOME/$wall_path/wallpaper"
             pywalfox update
-            gradience-cli monet --theme dark -p "$HOME/$wall_path/wallpaper" -n wallpaper
+            gradience-cli monet --theme $color_mode -p "$HOME/$wall_path/wallpaper" -n wallpaper
             gradience-cli apply -n wallpaper
 
         fi
