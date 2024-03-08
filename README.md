@@ -88,7 +88,7 @@ sofa setup
 
 #### type
 
-> Format in which color data is represented. (Note: can only be hex/argb)
+> Format in which color data is represented.
 
 | Type                 | Format                 |
 | -------------------- | ---------------------- |
