@@ -1,1 +1,3 @@
-{primaryContainer}
+some_config {
+    text_color = {primaryContainer}
+]
