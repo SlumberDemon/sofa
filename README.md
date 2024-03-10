@@ -59,11 +59,11 @@ sofa setup
 
 ### wallpath
 
-> Define where `sofa` fetches wallpapers from. (Note: must be accessible via `$HOME`) Learn how to setup wallpapers [here](#wallpapers)
+> Define where `sofa` fetches wallpapers from. (Note: must be accessible via `$HOME`)
 
 ### templates
 
-> Color templates for anything.
+> Color templates for anything. Looking for more examples, check out my [dotfiles](https://github.com/SlumberDemon/dotfiles/tree/main/.sofa/templates)
 
 ```json
 {

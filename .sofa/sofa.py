@@ -59,6 +59,12 @@ def type_converter(value, type: str) -> str:  # hex | argb | rgb
     if type == "rgb":
         h = hexFromArgb(value).lstrip("#")
         return str(tuple(int(h[i : i + 2], 16) for i in (0, 2, 4)))
+    if (
+        type == "rgba"
+    ):  # This can be used but is not recommended, requires you to add the finishing ) and extra value to define opacity if needed
+        h = hexFromArgb(value).lstrip("#")
+        return str(tuple(int(h[i : i + 2], 16) for i in (0, 2, 4))).removesuffix(")")
+
     return str(value)
 
 
