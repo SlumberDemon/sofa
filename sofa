@@ -149,16 +149,4 @@ elif [ "$1" == "full" ]; then
         fi
     fi
 
-# Random Utils
-elif [ "$1" == "utils" ]; then
-
-    if [ "$2" == "-r" ]; then
-        yay -S cbonsai cmatrix neofetch hyfetch pipes.sh cava uwufetch
-    elif [ "$2" == "-i" ]; then
-        yay -S python-material-color-utilities swww ttf-tabler-icons python-pywal wlogout gtklock gtklock-playerctl-module gtklock-powerbar-module gtklock-userinfo-module nerd-fonts-inter eww-try-wayland-git gradience fish playerctl starship nautilus gnome-clocks-git gnome-calendar-git gnome-calculator-gtk3 baobab-gtk3 eog-git gnome-font-viewer-git gnome-text-editor-git git
-    elif [ "$2" == "-n" ]; then
-        yay -S python-material-color-utilities fzf hyprpaper jq python-pywal gradience pywalfox
-    fi
-###
-
 fi
