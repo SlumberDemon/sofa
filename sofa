@@ -56,19 +56,19 @@ elif [ "$1" == "wall" ]; then
         wall_file=$(ls "$HOME/$wall_path/" | shuf -n 1)
 
         cp "$HOME/$wall_path/$wall_file" "$HOME/$wall_path/wallpaper"
-        pkill hyprpaper && nohup hyprpaper
+        # pkill hyprpaper && nohup hyprpaper
 
     elif [ "$2" == "-i" ]; then
 
         cp "$HOME/$wall_path/$3" "$HOME/$wall_path/wallpaper"
-        pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
-        #swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
+        # pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
+        swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
 
     elif [ "$2" == "-p" ]; then
 
         cp "$HOME/$3" "$HOME/$wall_path/wallpaper"
-        pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
-        #swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
+        # pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
+        swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
 
     else
 
@@ -77,8 +77,8 @@ elif [ "$1" == "wall" ]; then
         if [ -n "$selected_wallpaper" ]; then
 
             cp "$selected_wallpaper" "$HOME/$wall_path/wallpaper"
-            pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
-            #swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
+            # pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
+            swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
 
         fi
     fi
@@ -97,20 +97,39 @@ elif [ "$1" == "color" ]; then
     elif [ "$2" == "-m" ]; then
 
         python3 ~/.sofa/sofa.py templater $3
-        wal -c
-        wal -i "$HOME/$wall_path/wallpaper"
+        if [ "$3" == "light" ]; then
+         
+            wal -c
+            wal -l -i "$HOME/$wall_path/wallpaper"
+            
+        else
+         
+            wal -c 
+            wal -i "$HOME/$wall_path/wallpaper"
+
+        fi
         pywalfox update
         gradience-cli monet --theme $3 -p "$HOME/$wall_path/wallpaper" -n mode
         gradience-cli apply -n mode
 
     else
 
-        python3 ~/.sofa/sofa.py templater
-        wal -c
-        wal -i "$HOME/$wall_path/wallpaper"
+
+        python3 ~/.sofa/sofa.py templater $color_mode
+        if [ "$color_mode" == "light" ]; then
+         
+            wal -c
+            wal -l -i "$HOME/$wall_path/wallpaper"
+            
+        else
+         
+            wal -c 
+            wal -i "$HOME/$wall_path/wallpaper"
+
+        fi
         pywalfox update
-        gradience-cli monet --theme $color_mode -p "$HOME/$wall_path/wallpaper" -n wallpaper
-        gradience-cli apply -n wallpaper
+        gradience-cli monet --theme $color_mode -p "$HOME/$wall_path/wallpaper" -n mode
+        gradience-cli apply -n mode
 
     fi
 
@@ -121,8 +140,8 @@ elif [ "$1" == "full" ]; then
         wall_file=$(ls "$HOME/$wall_path/" | shuf -n 1)
 
         cp "$HOME/$wall_path/$wall_file" "$HOME/$wall_path/wallpaper"
-        pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
-        #swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
+        # pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
+        swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
         python3 ~/.sofa/sofa.py templater            
         wal -c
         wal -i "$HOME/$wall_path/wallpaper"
@@ -137,8 +156,8 @@ elif [ "$1" == "full" ]; then
         if [ -n "$selected_wallpaper" ]; then
 
             cp "$selected_wallpaper" "$HOME/$wall_path/wallpaper"
-            pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
-            # swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
+            # pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
+            swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
             python3 ~/.sofa/sofa.py templater
             wal -c
             wal -i "$HOME/$wall_path/wallpaper"
