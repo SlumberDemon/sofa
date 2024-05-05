@@ -143,8 +143,17 @@ elif [ "$1" == "full" ]; then
         # pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
         swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
         python3 ~/.sofa/sofa.py templater            
-        wal -c
-        wal -i "$HOME/$wall_path/wallpaper"
+        if [ "$color_mode" == "light" ]; then
+         
+            wal -c
+            wal -l -i "$HOME/$wall_path/wallpaper"
+            
+        else
+         
+            wal -c 
+            wal -i "$HOME/$wall_path/wallpaper"
+
+        fi
         pywalfox update
         gradience-cli monet --theme $color_mode -p "$HOME/$wall_path/wallpaper" -n wallpaper
         gradience-cli apply -n wallpaper
@@ -159,8 +168,17 @@ elif [ "$1" == "full" ]; then
             # pkill hyprpaper && nohup hyprpaper # Remove the first hashtag to use hyprpaper
             swww img ~/Pictures/wallpaper --transition-step 100 --transition-fps 60 --transition-type grow --transition-angle 30 --transition-duration 1 # Remove the first hashtag to use swww
             python3 ~/.sofa/sofa.py templater
-            wal -c
-            wal -i "$HOME/$wall_path/wallpaper"
+            if [ "$color_mode" == "light" ]; then
+            
+                wal -c
+                wal -l -i "$HOME/$wall_path/wallpaper"
+                
+            else
+            
+                wal -c 
+                wal -i "$HOME/$wall_path/wallpaper"
+
+            fi
             pywalfox update
             gradience-cli monet --theme $color_mode -p "$HOME/$wall_path/wallpaper" -n wallpaper
             gradience-cli apply -n wallpaper
